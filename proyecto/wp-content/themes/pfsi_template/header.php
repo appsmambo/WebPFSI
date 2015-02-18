@@ -61,12 +61,24 @@
 							<img src="<?php echo get_template_directory_uri() ?>/images/logo.jpg" alt="<?php bloginfo('name'); ?>" class="img-responsive">
 						</a>
 					</div>
-					<!--div class="collapse navbar-collapse navbar-responsive-collapse visible-xs">
-						<?php //wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-					</div-->
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
+						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+					</div>
 				</div> <!-- end .container -->
 			</div> <!-- end .navbar -->
 		
 		</header> <!-- end header -->
 		
 		<div class="container">
+			<?php $items = wp_get_nav_menu_items('principal'); ?> 
+			<div class="container-menu">
+				<ul class="menu-principal">
+					<?php foreach($items as $item): ?>
+					<li>
+						<a href="<?php echo $item->url ?>" target="<?php echo $item->target ?>">
+							<?php echo $item->title ?>
+						</a>
+					</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>

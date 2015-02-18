@@ -1,3 +1,17 @@
+@font-face {
+	font-family:'megi_sansregular';
+	src:url('fonts/megi_sans_demo-webfont.eot');
+	src:url('fonts/megi_sans_demo-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/megi_sans_demo-webfont.woff2') format('woff2'),
+		url('fonts/megi_sans_demo-webfont.woff') format('woff'),
+		url('fonts/megi_sans_demo-webfont.ttf') format('truetype'),
+		url('fonts/megi_sans_demo-webfont.svg#megi_sansregular') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+body {
+	
+}
 .container {
 	
 }
@@ -13,5 +27,137 @@
 .link-home {
 	position:absolute;
 	bottom:0;
-	right:0
+	right:30px
+}
+.container-menu {
+	background:#3a5c3b;
+	clear:both;
+	float:left;
+	overflow:hidden;
+	width:100%;
+}
+.menu-principal {
+	float:left;
+	left:50%;
+	height:58px;
+	margin:0 auto;
+	padding:0;
+	position:relative
+}
+.menu-principal li {
+	position:relative;
+	right:50%;
+	list-style:none;
+	float:left;
+	margin:0 30px
+}
+.menu-principal li a {
+	font-family:'megi_sansregular';
+	line-height:60px;
+	font-size:15px;
+	text-shadow:0px 2px 1px rgba(0, 0, 0, 1);
+	color:#fff
+}
+
+.meteor-slides .meteor-buttons {
+	bottom:5px;
+	left:5px
+}
+.widget_text {
+	font-family:'megi_sansregular';
+	background-color:#4f8e3a;
+	color:#fff;
+	padding:33px 23px 0;
+	height:212px;
+	font-size:16px;
+	position:relative
+}
+.widgettitle {
+	margin-top:0;
+	font-size:21px
+}
+.widget_text .link {
+	font-family:'megi_sansregular';
+	background-color:#3a5c3b;
+	color:#fff;
+	font-size:14px;
+	height:30px;
+	line-height:30px;
+	width:100%;
+	display:block;
+	padding-right:14px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	text-align:right
+}
+.titular-noticias {
+	font-family:'megi_sansregular';
+	font-size:30px;
+	padding-bottom:8px;
+	color:#4f8e3a;
+	border-bottom:2px solid #4f8e3a;
+	position:absolute;
+	width:40%;
+	z-index:9999
+}
+.advps-slide-field-three img {
+	float:right
+}
+footer {
+	background-color:#306536
+}
+footer p {
+	padding:8px 0 0 0;
+	text-align:center;
+	line-height:16px
+}
+footer p,
+footer a {
+	color:#fff;
+	font-family:'megi_sansregular';
+	font-size:13px
+}
+footer a:hover {
+	color:#fff;
+	text-decoration:none
+}
+
+@media(max-width:767px){
+	body {
+		padding-top:50px
+	}
+	.container-menu {
+		display:none
+	}
+	.navbar-fixed-top, .navbar-fixed-bottom {
+		position:fixed
+	}
+}
+@media(min-width:768px) and (max-width:991px){
+	.widget_text {
+		padding:13px;
+		font-size:13px
+	}
+	.widgettitle {
+		font-size:16px
+	}
+	.widget_text .link {
+		font-size:12px
+	}
+}
+@media(min-width:768px){
+	#menu-principal {
+		display:none
+	}
+}
+@media(min-width:992px){
+	.widget_text {
+		height:278px
+	}
+}
+@media(min-width:1200px){
+	.widget_text {
+		height:281px
+	}
 }
