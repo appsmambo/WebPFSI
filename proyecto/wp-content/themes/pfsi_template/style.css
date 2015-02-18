@@ -1,0 +1,17 @@
+.container {
+	
+}
+.navbar-default {
+	background-color:#fff !important;
+	border-color:#fff !important
+}
+
+.relativo {
+	position:relative;
+	height:90px
+}
+.link-home {
+	position:absolute;
+	bottom:0;
+	right:0
+}
