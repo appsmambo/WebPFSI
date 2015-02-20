@@ -393,21 +393,21 @@
 }
 <?php elseif($navigation['advps_exclude_pager'] == 'no' && (!isset($navigation['advps_pager_type']) || ($navigation['advps_pager_type'] == 'bullet' || ($slider['advps_slider_type'] != 'standard' && $navigation['advps_pager_type']=='thumb')))):?>
 #advps_container<?php echo $sldshowID;?> .bx-wrapper .bx-pager.bx-default-pager a {
-	background: #666;
+	background: #3a5c3b;
 	text-indent: -9999px;
 	display: block;
-	width: 10px;
-	height: 10px;
+	width: 14px;
+	height: 14px;
 	margin: 0 5px;
 	outline: 0;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 6px;
 	text-align:left;
 }
 #advps_container<?php echo $sldshowID;?> .bx-wrapper .bx-pager.bx-default-pager a:hover,
 #advps_container<?php echo $sldshowID;?> .bx-wrapper .bx-pager.bx-default-pager a.active {
-	background: #000;
+	background: #4f8e3a
 }
 <?php endif;?>
 
@@ -552,11 +552,12 @@
 				<<?php echo $content['advps_ttitle_tag'];?> class="advs-title" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;">
 				<?php if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);}?>" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;"><?php }?>
 				<?php the_title();?>
+				<span class="fecha"><?php echo get_the_date('d/m/Y'); ?></span>
 				<?php if( $content['advps_ed_link']=='enable'){?></a><?php }?>
 				</<?php echo $content['advps_ttitle_tag'];?>><?php }?>
 				<!-- h2 title cierre -->
 				<!-- imagen -->
-				<?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
+				<?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?><a class="imagen-noticia" target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
           	<?php 
 				if(has_post_thumbnail()){
 					$advps_custom_thumb = $wpdb->get_results("select width,height,crop from ".$wpdb->prefix."advps_thumbnail where thumb_name = '".$container['advps_thumbnail']."'");
