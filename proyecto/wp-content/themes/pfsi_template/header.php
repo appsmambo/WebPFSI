@@ -68,9 +68,9 @@
 			</div> <!-- end .navbar -->
 		
 		</header> <!-- end header -->
-		
-		<div class="container">
-			<?php $items = wp_get_nav_menu_items('principal'); ?> 
+
+		<?php $items = wp_get_nav_menu_items('principal'); ?> 
+		<section class="container-fluid">
 			<div class="container-menu">
 				<ul class="menu-principal">
 					<?php foreach($items as $item): ?>
@@ -82,3 +82,5 @@
 					<?php endforeach; ?>
 				</ul>
 			</div>
+		</section>
+		<div class="container">

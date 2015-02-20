@@ -546,7 +546,17 @@
     <?php elseif($template == 'three'):?>
     <div class="advps-slide">
         <div class="advps-slide-field-three" style="position:relative;float:left;padding:<?php echo $container['advps_contpad1'].'px '.$container['advps_contpad2'].'px '.$container['advps_contpad3'].'px '.$container['advps_contpad4'].'px';?>;">
-         <?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
+          <div class="advps-excerpt-<?php echo $template?>" style="position:relative;float:left;max-width:<?php echo $content['advps_cont_width'] - ($container['advps_contpad2']+$container['advps_contpad4']);?>px;z-index:0; color:<?php echo $content['advps_excptFcolor'];?>; font-size:<?php echo $content['advps_excptFsize'].$content['advps_excptFSunit'];?>;line-height:<?php echo $content['advps_excptLheight'].$content['advps_excptLHunit'];?>;">
+				<!-- h2 title -->
+				<?php if(in_array('title',$content['advps_content_set'])){?>
+				<<?php echo $content['advps_ttitle_tag'];?> class="advs-title" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;">
+				<?php if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);}?>" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;"><?php }?>
+				<?php the_title();?>
+				<?php if( $content['advps_ed_link']=='enable'){?></a><?php }?>
+				</<?php echo $content['advps_ttitle_tag'];?>><?php }?>
+				<!-- h2 title cierre -->
+				<!-- imagen -->
+				<?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
           	<?php 
 				if(has_post_thumbnail()){
 					$advps_custom_thumb = $wpdb->get_results("select width,height,crop from ".$wpdb->prefix."advps_thumbnail where thumb_name = '".$container['advps_thumbnail']."'");
@@ -568,10 +578,7 @@
 				}
 			?>
          <?php if( $content['advps_ed_link']=='enable'){?></a><?php }endif;?>
-          <div class="advps-excerpt-<?php echo $template?>" style="position:relative;float:left;max-width:<?php echo $content['advps_cont_width'] - ($container['advps_contpad2']+$container['advps_contpad4']);?>px;z-index:0; color:<?php echo $content['advps_excptFcolor'];?>; font-size:<?php echo $content['advps_excptFsize'].$content['advps_excptFSunit'];?>;line-height:<?php echo $content['advps_excptLheight'].$content['advps_excptLHunit'];?>;">
-            <?php if(in_array('title',$content['advps_content_set'])){?><<?php echo $content['advps_ttitle_tag'];?> class="advs-title" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;"> <?php if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);}?>" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;"><?php }?>
-              <?php the_title();?>
-              <?php if( $content['advps_ed_link']=='enable'){?></a><?php }?></<?php echo $content['advps_ttitle_tag'];?>><?php }?>
+				<!-- imagen cierre -->
               <?php if(in_array('content',$content['advps_content_set'])){
             			the_content();
 					}
