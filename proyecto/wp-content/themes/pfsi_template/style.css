@@ -141,6 +141,10 @@ body {
 	right:0;
 	bottom:3px
 }
+.evento .titular-noticias,
+.evento .advs-title {
+	width:88%
+}
 footer {
 	background-color:#306536
 }

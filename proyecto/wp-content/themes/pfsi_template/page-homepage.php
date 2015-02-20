@@ -20,7 +20,7 @@ Template Name: Homepage
 								<?php echo do_shortcode( '[advps-slideshow optset="3"]' ); ?>
 							</div>
 							<div class="col-sm-4">
-								&nbsp;
+								<?php echo do_shortcode( '[advps-slideshow optset="4"]' ); ?>
 							</div>
 						</section>
 					</article> <!-- end article -->
