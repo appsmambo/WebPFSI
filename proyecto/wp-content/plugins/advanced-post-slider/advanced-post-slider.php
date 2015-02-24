@@ -547,46 +547,62 @@
     <div class="advps-slide">
         <div class="advps-slide-field-three" style="position:relative;float:left;padding:<?php echo $container['advps_contpad1'].'px '.$container['advps_contpad2'].'px '.$container['advps_contpad3'].'px '.$container['advps_contpad4'].'px';?>;">
           <div class="advps-excerpt-<?php echo $template?>" style="position:relative;float:left;max-width:<?php echo $content['advps_cont_width'] - ($container['advps_contpad2']+$container['advps_contpad4']);?>px;z-index:0; color:<?php echo $content['advps_excptFcolor'];?>; font-size:<?php echo $content['advps_excptFsize'].$content['advps_excptFSunit'];?>;line-height:<?php echo $content['advps_excptLheight'].$content['advps_excptLHunit'];?>;">
-				<!-- h2 title -->
-				<?php if(in_array('title',$content['advps_content_set'])){?>
-				<<?php echo $content['advps_ttitle_tag'];?> class="advs-title" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;">
-				<?php if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);}?>" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;"><?php }?>
-				<?php the_title();?>
-				<span class="fecha"><?php echo get_the_date('d/m/Y'); ?></span>
-				<?php if( $content['advps_ed_link']=='enable'){?></a><?php }?>
-				</<?php echo $content['advps_ttitle_tag'];?>><?php }?>
-				<!-- h2 title cierre -->
-				<!-- imagen -->
-				<?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?><a class="imagen-noticia" target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
-          	<?php 
-				if(has_post_thumbnail()){
-					$advps_custom_thumb = $wpdb->get_results("select width,height,crop from ".$wpdb->prefix."advps_thumbnail where thumb_name = '".$container['advps_thumbnail']."'");
-					if($advps_custom_thumb){
-						$thmb_image = wp_get_attachment_url( get_post_thumbnail_id());
-						$advps_image = aq_resize( $thmb_image, $advps_custom_thumb[0]->width, $advps_custom_thumb[0]->height,$advps_custom_thumb[0]->crop,true,true);
-						echo '<img src="'.$advps_image.'" width="'.$advps_custom_thumb[0]->width.'" height="'.$advps_custom_thumb[0]->height.'" alt="'.get_the_title().'" />';
+
+			<div class="row">
+				<div class="<?php if ($sldshowID == 3) echo 'col-sm-6'; else echo 'col-sm-12' ?>">
+					<!-- h2 title -->
+					<?php if(in_array('title',$content['advps_content_set'])){?>
+					<<?php echo $content['advps_ttitle_tag'];?> class="advs-title" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;">
+					<?php if( $content['advps_ed_link']=='enable'){?><a target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);}?>" style="color:<?php echo $content['advps_titleFcolor'];?>;font-size:<?php echo $content['advps_titleFsize'].$content['advps_ttitleFSunit'];?>;line-height:<?php echo $content['advps_titleLheight'].$content['advps_ttitleLHunit'];?>;margin:5px 0px 10px 0px;"><?php }?>
+					<?php the_title();?>
+					<span class="fecha"><?php echo get_the_date('d/m/Y'); ?></span>
+					<?php if( $content['advps_ed_link']=='enable'){?></a><?php }?>
+					</<?php echo $content['advps_ttitle_tag'];?>><?php }?>
+					<!-- h2 title cierre -->
+				</div>
+				<?php if ($sldshowID == 3): ?>
+				<div class="col-sm-6">
+					<!-- imagen -->
+					<?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?><a class="imagen-noticia" target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
+				<?php 
+					if(has_post_thumbnail()){
+						$advps_custom_thumb = $wpdb->get_results("select width,height,crop from ".$wpdb->prefix."advps_thumbnail where thumb_name = '".$container['advps_thumbnail']."'");
+						if($advps_custom_thumb){
+							$thmb_image = wp_get_attachment_url( get_post_thumbnail_id());
+							$advps_image = aq_resize( $thmb_image, $advps_custom_thumb[0]->width, $advps_custom_thumb[0]->height,$advps_custom_thumb[0]->crop,true,true);
+							echo '<img src="'.$advps_image.'" width="'.$advps_custom_thumb[0]->width.'" height="'.$advps_custom_thumb[0]->height.'" alt="'.get_the_title().'" />';
+						}
+						else
+						{
+							the_post_thumbnail($container['advps_thumbnail']);
+						}
 					}
-					else
+					elseif(isset($container['advps_default_image']) && $container['advps_default_image'] != '')
 					{
-						the_post_thumbnail($container['advps_thumbnail']);
-					}
-				}
-				elseif(isset($container['advps_default_image']) && $container['advps_default_image'] != '')
-				{
-			?>
-        		 <img src="<?php echo $container['advps_default_image'];?>" class="wp-post-image" alt="<?php the_title();?>" />
-        	<?php
-				}
-			?>
-         <?php if( $content['advps_ed_link']=='enable'){?></a><?php }endif;?>
-				<!-- imagen cierre -->
-              <?php if(in_array('content',$content['advps_content_set'])){
-            			the_content();
-					}
-					elseif(in_array('excerpt',$content['advps_content_set'])){
-						the_excerpt();
+				?>
+					 <img src="<?php echo $container['advps_default_image'];?>" class="wp-post-image" alt="<?php the_title();?>" />
+				<?php
 					}
 				?>
+				<?php if( $content['advps_ed_link']=='enable'){?></a><?php }endif;?>
+				<!-- imagen cierre -->
+				</div>
+				<?php endif; ?>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<?php if(in_array('content',$content['advps_content_set'])){
+		  the_content();
+	  }
+	  elseif(in_array('excerpt',$content['advps_content_set'])){
+		  the_excerpt();
+	  }
+  ?>
+				</div>
+			</div>
+
+        
+
           </div>
           </div>
 	</div>

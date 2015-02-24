@@ -101,7 +101,7 @@ body {
 	color:#4f8e3a;
 	border-bottom:2px solid #4f8e3a;
 	position:absolute;
-	width:40%;
+	width:286px;
 	z-index:9999
 }
 .advps-slide-field-three img {
@@ -109,7 +109,7 @@ body {
 }
 .advs-title {
 	margin-top:45px !important;
-	width:40%;
+	width:286px;
 	height:80px;
 	line-height:20px !important;
 	border-bottom:1px solid #a7c69c;
@@ -123,9 +123,7 @@ body {
 	line-height:20px !important
 }
 .imagen-noticia img {
-	margin-top:-145px;
-	margin-left:72px;
-	margin-bottom:5px
+	margin-bottom:8px
 }
 .advps-excerpt-three p {
 	font-family:'megi_sansregular';
