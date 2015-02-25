@@ -26,5 +26,17 @@
 			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 		<![endif]-->
 		<?php wp_footer(); // js scripts are inserted using this function ?>
+		<script>
+			jQuery(document).ready(function($) {
+				$('.sub-menu:first').fadeOut();
+				$('.menu-item-has-children', '#menu-principal-1').hover(
+					function() {
+						$('.sub-menu', this).stop().fadeIn();
+					}, function() {
+						$('.sub-menu', this).stop().fadeOut();
+					}
+				);
+			});
+		</script>
 	</body>
 </html>

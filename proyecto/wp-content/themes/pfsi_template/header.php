@@ -68,19 +68,9 @@
 			</div> <!-- end .navbar -->
 		
 		</header> <!-- end header -->
-
-		<?php $items = wp_get_nav_menu_items('principal'); ?> 
+		
 		<section class="container-fluid">
-			<div class="container-menu">
-				<ul class="menu-principal">
-					<?php foreach($items as $item): ?>
-					<li>
-						<a href="<?php echo $item->url ?>" target="<?php echo $item->target ?>">
-							<?php echo $item->title ?>
-						</a>
-					</li>
-					<?php endforeach; ?>
-				</ul>
-			</div>
+			<?php wp_nav_menu( array('menu' => 'principal', 'container_class' => 'container-menu', 'menu_class' => 'menu-principal' )); ?>
 		</section>
+		
 		<div class="container">

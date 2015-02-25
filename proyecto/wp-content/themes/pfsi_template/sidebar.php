@@ -1,19 +1,7 @@
-				<div id="sidebar1" class="col-sm-4" role="complementary">
-				
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
-
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
-
-					<?php else : ?>
-
-						<!-- This content shows up if there are no widgets defined in the backend. -->
+				<div id="sidebar1" class="col-sm-3" role="complementary">
+					<!-- This content shows up if there are no widgets defined in the backend. -->
+					<div class="alert alert-message">
+						<?php wp_nav_menu( array('menu' => 'principal', 'container_class' => 'vertical-menu', 'menu_class' => '' )); ?>
 						
-						<div class="alert alert-message">
-						
-							<p><?php _e("Please activate some Widgets","wpbootstrap"); ?>.</p>
-						
-						</div>
-
-					<?php endif; ?>
-
+					</div>
 				</div>

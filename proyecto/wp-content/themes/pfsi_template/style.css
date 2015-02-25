@@ -32,11 +32,22 @@ body {
 	bottom:0;
 	right:30px
 }
+.page-header h1 {
+	font-family:'megi_sansregular';
+	font-size:30px;
+	color:#4f8e3a;
+	border-bottom:2px solid #4f8e3a
+}
+.lead {
+	font-family:'megi_sansregular';
+	font-size:20px;
+	color:#3a5b3a;
+	text-transform:uppercase
+}
 .container-menu {
 	background:#3a5c3b;
 	clear:both;
 	float:left;
-	overflow:hidden;
 	width:100%;
 }
 .menu-principal {
@@ -47,19 +58,93 @@ body {
 	padding:0;
 	position:relative
 }
-.menu-principal li {
+.menu-principal > li {
 	position:relative;
 	right:50%;
 	list-style:none;
 	float:left;
 	margin:0 30px
 }
-.menu-principal li a {
+.menu-principal > li a {
 	font-family:'megi_sansregular';
 	line-height:60px;
 	font-size:15px;
 	text-shadow:0px 2px 1px rgba(0, 0, 0, 1);
 	color:#fff
+}
+#menu-principal-1 .sub-menu {
+	background-color:transparent;
+	background-image:url('images/menu-corner.png');
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin:0;
+	padding:14px 0 0;
+	width:185px;
+	position:absolute;
+	overflow:hidden;
+	z-index:10;
+	left:-50px;
+	top:44px
+}
+#menu-principal-1 .sub-menu li {
+	background-color:#4f8e3a;
+	padding:10px 15px 10px 20px;
+	list-style:none;
+	float:left;
+	width:100%
+}
+#menu-principal-1 .sub-menu li:hover {
+	background:#fff
+}
+#menu-principal-1 .sub-menu a {
+	font-size:12px!important;
+	text-shadow:none!important;
+	line-height:14px!important;
+	text-decoration:none!important
+}
+#menu-principal-1 .sub-menu li:hover a {
+	color:#4f8e3a!important
+}
+.vertical-menu ul {
+	margin:0;
+	padding:0
+}
+.vertical-menu li {
+	border-bottom:1px solid #3a5c3b;
+	list-style:none;
+	width:100%;
+	float:left;
+	padding:8px;
+	margin-bottom:2px
+}
+.vertical-menu a {
+	font-family:'megi_sansregular';
+	font-size:14px;
+	color:#211915;
+	text-decoration:none
+}
+.vertical-menu li.current-menu-item {
+	background-image:url('images/menu-corner2.png');
+	background-position:top right;
+	background-repeat:no-repeat;
+	background-color:#4f8e3a
+}
+.vertical-menu li.current-menu-item a {
+	color:#fff
+}
+.vertical-menu .sub-menu li {
+	border-bottom:1px solid #3a5b3a;
+	list-style:none;
+	width:100%;
+	float:left;
+	padding:4px
+}
+.vertical-menu .sub-menu li:last-child {
+	border-bottom:none
+}
+.vertical-menu .sub-menu li a {
+	font-size:11px;
+	color:#3a5b3a
 }
 
 .meteor-slides .meteor-buttons {
