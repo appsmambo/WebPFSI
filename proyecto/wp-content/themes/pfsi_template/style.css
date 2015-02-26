@@ -36,7 +36,8 @@ body {
 	font-family:'megi_sansregular';
 	font-size:30px;
 	color:#4f8e3a;
-	border-bottom:2px solid #4f8e3a
+	border-bottom:2px solid #4f8e3a;
+	text-transform:uppercase
 }
 .lead {
 	font-family:'megi_sansregular';
@@ -58,19 +59,30 @@ body {
 	padding:0;
 	position:relative
 }
+.menu-principal a {
+	text-transform:uppercase
+}
 .menu-principal > li {
 	position:relative;
 	right:50%;
 	list-style:none;
 	float:left;
-	margin:0 30px
+	margin:0 10px
 }
 .menu-principal > li a {
 	font-family:'megi_sansregular';
-	line-height:60px;
+	line-height:52px;
 	font-size:15px;
 	text-shadow:0px 2px 1px rgba(0, 0, 0, 1);
-	color:#fff
+	color:#fff;
+	text-decoration:none;
+	padding:0 20px;
+	margin-top:3px;
+	display:block
+}
+.menu-principal > li.current-menu-item a,
+.menu-principal > li a:hover {
+	background-image:url('images/fondo-menu.png')
 }
 #menu-principal-1 .sub-menu {
 	background-color:transparent;
@@ -100,7 +112,9 @@ body {
 	font-size:12px!important;
 	text-shadow:none!important;
 	line-height:14px!important;
-	text-decoration:none!important
+	text-decoration:none!important;
+	padding:0!important;
+	margin-top:0!important
 }
 #menu-principal-1 .sub-menu li:hover a {
 	color:#4f8e3a!important
@@ -118,16 +132,16 @@ body {
 	margin-bottom:2px
 }
 .vertical-menu a {
+	text-transform:uppercase;
 	font-family:'megi_sansregular';
 	font-size:14px;
 	color:#211915;
 	text-decoration:none
 }
 .vertical-menu li.current-menu-item {
-	background-image:url('images/menu-corner2.png');
-	background-position:top right;
-	background-repeat:no-repeat;
-	background-color:#4f8e3a
+	background-image:url('images/fondo-menu-vertical.png');
+	background-position:top left;
+	background-repeat:no-repeat
 }
 .vertical-menu li.current-menu-item a {
 	color:#fff
