@@ -141,7 +141,9 @@ body {
 .vertical-menu li.current-menu-item {
 	background-image:url('images/fondo-menu-vertical.png');
 	background-position:top left;
-	background-repeat:no-repeat
+	background-repeat:no-repeat;
+	margin-top:5px;
+	padding-bottom:15px
 }
 .vertical-menu li.current-menu-item a {
 	color:#fff
