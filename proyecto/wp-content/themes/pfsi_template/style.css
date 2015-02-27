@@ -10,7 +10,12 @@
 	font-style:normal
 }
 body {
-	border-top:2px solid #3a5c3b
+	border-top:2px solid #3a5c3b;
+	overflow-x:hidden
+}
+a {
+	color:blue;
+	text-decoration:none!important
 }
 .container {
 	
@@ -49,8 +54,7 @@ body {
 	background:#3a5c3b;
 	clear:both;
 	float:left;
-	width:100%;
-	overflow:hidden
+	width:100%
 }
 .menu-principal {
 	float:left;
@@ -76,7 +80,6 @@ body {
 	font-size:15px;
 	text-shadow:0px 2px 1px rgba(0, 0, 0, 1);
 	color:#fff;
-	text-decoration:none;
 	padding:0 20px;
 	margin-top:3px;
 	display:block
@@ -113,7 +116,6 @@ body {
 	font-size:12px!important;
 	text-shadow:none!important;
 	line-height:14px!important;
-	text-decoration:none!important;
 	padding:0!important;
 	margin-top:0!important
 }
@@ -136,18 +138,29 @@ body {
 	text-transform:uppercase;
 	font-family:'megi_sansregular';
 	font-size:14px;
-	color:#211915;
-	text-decoration:none
+	color:#211915
 }
-.vertical-menu li.current-menu-item {
-	background-image:url('images/fondo-menu-vertical.png');
+.vertical-menu .menu-item-has-children {
+	background-color:transparent!important;
+	background-image:url('images/fondo-menu-vertical.png')!important;
 	background-position:top left;
 	background-repeat:no-repeat;
 	margin-top:5px;
 	padding-bottom:15px
 }
-.vertical-menu li.current-menu-item a {
+.vertical-menu li.current-menu-item {
+	background-color:#4f8e3a;
+	background-image:none;
+	margin-top:5px;
+	padding-bottom:4px
+}
+.vertical-menu li.current-menu-item a,
+.vertical-menu li.menu-item-has-children a {
 	color:#fff
+}
+.vertical-menu li.menu-item-has-children > a {
+	display:block;
+	margin-bottom:10px
 }
 .vertical-menu .sub-menu li {
 	border-bottom:1px solid #3a5b3a;
@@ -202,6 +215,7 @@ body {
 	left:0;
 	text-align:right
 }
+#text-4.widget_text,
 #text-3.widget_text {
 	font-family:Arial;
 	background-color:transparent;
@@ -210,6 +224,7 @@ body {
 	height:auto;
 	font-size:14px
 }
+#text-4 .widgettitle,
 #text-3 .widgettitle {
 	display:none
 }
@@ -272,8 +287,7 @@ footer a {
 	font-size:13px
 }
 footer a:hover {
-	color:#fff;
-	text-decoration:none
+	color:#fff
 }
 legend.titulo {
 	background-image:url('images/fondo-leyenda.png');
@@ -293,6 +307,21 @@ legend.titulo {
 .siguiente {
 	color:#3a5b3a;
 	font-size:11px
+}
+.paginador {
+	font-size:12px;
+	color:#3a5b3a;
+	width:100%;
+	margin:28px 0 0;
+	text-align:center;
+	font-weight:bold;
+	letter-spacing:10px
+}
+.paginador a {
+	font-size:12px;
+	color:#3a5b3a;
+	font-weight:normal;
+	letter-spacing:10px
 }
 
 @media(max-width:767px){

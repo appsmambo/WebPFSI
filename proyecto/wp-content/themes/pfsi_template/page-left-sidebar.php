@@ -18,6 +18,7 @@ Template Name: Left Sidebar Page
 								<section class="post_content">
 									<?php the_content(); ?>
 								</section> <!-- end article section -->
+								<?php wp_link_pages( array( 'before' => '<section class="paginador">', 'after' => '</section>' ) ); ?>
 							</div>
 							<div class="col-sm-5">
 								<?php dynamic_sidebar( 'sidebar3' ); ?>
