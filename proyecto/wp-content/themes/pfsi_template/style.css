@@ -50,6 +50,7 @@ body {
 	clear:both;
 	float:left;
 	width:100%;
+	overflow:hidden
 }
 .menu-principal {
 	float:left;
@@ -162,6 +163,12 @@ body {
 	font-size:11px;
 	color:#3a5b3a
 }
+.vertical-menu .sub-menu li.current-menu-item {
+	background-color:#4f8e3a
+}
+.vertical-menu .sub-menu li.current-menu-item a {
+	color:#fff
+}
 
 .meteor-slides .meteor-buttons {
 	bottom:5px;
@@ -195,6 +202,17 @@ body {
 	left:0;
 	text-align:right
 }
+#text-3.widget_text {
+	font-family:Arial;
+	background-color:transparent;
+	color:#000;
+	padding:0 0 12px;
+	height:auto;
+	font-size:14px
+}
+#text-3 .widgettitle {
+	display:none
+}
 .titular-noticias {
 	font-family:'megi_sansregular';
 	font-size:30px;
@@ -209,25 +227,21 @@ body {
 	float:right
 }
 .advs-title {
-	margin-top:45px !important;
+	margin-top:47px!important;
 	width:286px;
 	height:80px;
 	line-height:20px !important;
 	border-bottom:1px solid #a7c69c;
-	position:relative
-}
-.advs-title a {
+	position:relative;
 	color:#3a5b3a;
 	font-family:'megi_sansregular';
-	font-size:18px !important;
-	font-weight:normal;
-	line-height:20px !important
+	font-size:18px!important;
+	font-weight:normal!important
 }
 .imagen-noticia img {
-	margin-bottom:8px
+	
 }
 .advps-excerpt-three p {
-	font-family:'megi_sansregular';
 	color:#3a5b3a;
 	font-size:14px;
 	line-height:22px
@@ -255,12 +269,30 @@ footer p {
 footer p,
 footer a {
 	color:#fff;
-	font-family:'megi_sansregular';
 	font-size:13px
 }
 footer a:hover {
 	color:#fff;
 	text-decoration:none
+}
+legend.titulo {
+	background-image:url('images/fondo-leyenda.png');
+	font-size:12px;
+	color:#fff;
+	position:absolute;
+	bottom:0;
+	border:none;
+	margin-bottom:0;
+	padding-left:10px;
+	line-height:18px
+}
+.bx-controls-direction {
+	display:none
+}
+.previo, 
+.siguiente {
+	color:#3a5b3a;
+	font-size:11px
 }
 
 @media(max-width:767px){

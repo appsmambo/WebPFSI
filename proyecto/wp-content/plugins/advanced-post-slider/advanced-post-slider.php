@@ -563,6 +563,9 @@
 				<?php if ($sldshowID == 3): ?>
 				<div class="col-sm-6">
 					<!-- imagen -->
+					<legend class="titulo">
+						<?php echo get_the_title() ?>
+					</legend>
 					<?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?><a class="imagen-noticia" target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
 				<?php 
 					if(has_post_thumbnail()){
@@ -600,9 +603,40 @@
   ?>
 				</div>
 			</div>
-
-        
-
+			<?php if ($sldshowID != 3): ?>
+			  <div class="row">
+				  <div class="col-sm-12 imagen-noticia">
+					<!-- imagen -->
+					<legend class="titulo">
+						<?php echo get_the_title() ?>
+					</legend>
+					<?php if(in_array('thumb',$content['advps_content_set'])):if( $content['advps_ed_link']=='enable'){?>
+					<a class="" target="<?php echo $content['advps_link_target'];?>" href="<?php if($content['advps_link_type'] == 'permalink'){the_permalink();}else{echo get_post_meta($post->ID,'advps_custom_link',true);};?>"><?php }?>
+				<?php 
+					if(has_post_thumbnail()){
+						$advps_custom_thumb = $wpdb->get_results("select width,height,crop from ".$wpdb->prefix."advps_thumbnail where thumb_name = '".$container['advps_thumbnail']."'");
+						if($advps_custom_thumb){
+							$thmb_image = wp_get_attachment_url( get_post_thumbnail_id());
+							$advps_image = aq_resize( $thmb_image, $advps_custom_thumb[0]->width, $advps_custom_thumb[0]->height,$advps_custom_thumb[0]->crop,true,true);
+							echo '<img src="'.$advps_image.'" width="'.$advps_custom_thumb[0]->width.'" height="'.$advps_custom_thumb[0]->height.'" alt="'.get_the_title().'" />';
+						}
+						else
+						{
+							the_post_thumbnail($container['advps_thumbnail']);
+						}
+					}
+					elseif(isset($container['advps_default_image']) && $container['advps_default_image'] != '')
+					{
+				?>
+					 <img src="<?php echo $container['advps_default_image'];?>" class="wp-post-image" alt="<?php the_title();?>" />
+				<?php
+					}
+				?>
+				<?php if( $content['advps_ed_link']=='enable'){?></a><?php }endif;?>
+				<!-- imagen cierre -->
+				</div>
+			  </div>
+			<?php endif; ?>
           </div>
           </div>
 	</div>

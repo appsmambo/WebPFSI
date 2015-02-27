@@ -28,14 +28,23 @@
 		<?php wp_footer(); // js scripts are inserted using this function ?>
 		<script>
 			jQuery(document).ready(function($) {
-				$('.sub-menu:first').fadeOut();
-				$('.menu-item-has-children', '#menu-principal-1').hover(
+				jQuery('.sub-menu:first').fadeOut();
+				jQuery('.menu-item-has-children', '#menu-principal-1').hover(
 					function() {
-						$('.sub-menu', this).stop().fadeIn();
+						jQuery('.sub-menu', this).stop().fadeIn();
 					}, function() {
-						$('.sub-menu', this).stop().fadeOut();
+						jQuery('.sub-menu', this).stop().fadeOut();
 					}
 				);
+			});
+			jQuery(window).load(function() {
+				jQuery('.bx-default-pager').delay(500).prepend('<span class="previo">&lt; Anterior </span>').append('<span class="siguiente"> Siguiente &gt;</span>');
+				/*jQuery('.previo').on('click', '#advps_container3', function() {
+					jQuery('.bx-prev', '#advps_container3').trigger('click');
+				});
+				jQuery('.siguiente').on('click', '#advps_container3', function() {
+					jQuery('.bx-next', '#advps_container3').trigger('click');
+				});*/
 			});
 		</script>
 	</body>
