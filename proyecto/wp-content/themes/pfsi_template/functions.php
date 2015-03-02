@@ -189,7 +189,17 @@ function wp_bootstrap_register_sidebars() {
   	'before_title' => '<h4 class="widgettitle">',
   	'after_title' => '</h4>',
   ));
-    
+  
+  register_sidebar(array(
+  	'id' => 'footer',
+  	'name' => 'Pie de página',
+  	'description' => '',
+  	'before_widget' => '',
+  	'after_widget' => '',
+  	'before_title' => '',
+  	'after_title' => '',
+  ));
+/*    
   register_sidebar(array(
     'id' => 'footer1',
     'name' => 'Footer 1',
@@ -216,7 +226,7 @@ function wp_bootstrap_register_sidebars() {
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => '</h4>',
   ));
-    
+    */
     
   /* 
   to add more sidebars or widgetized areas, just copy

@@ -17,6 +17,10 @@ a {
 	color:blue;
 	text-decoration:none!important
 }
+p {
+	color:#3a5b3a;
+	text-align:justify
+}
 .container {
 	
 }
@@ -47,7 +51,6 @@ a {
 .lead {
 	font-family:'megi_sansregular';
 	font-size:20px;
-	color:#3a5b3a;
 	text-transform:uppercase
 }
 .container-menu {
@@ -201,6 +204,9 @@ a {
 	bottom:5px;
 	left:5px
 }
+.textwidget p {
+	color:#fff
+}
 .widget_text {
 	font-family:'megi_sansregular';
 	background-color:#4f8e3a;
@@ -271,7 +277,6 @@ a {
 	
 }
 .advps-excerpt-three p {
-	color:#3a5b3a;
 	font-size:14px;
 	line-height:22px
 }
@@ -290,18 +295,24 @@ a {
 footer {
 	background-color:#306536
 }
-footer p {
+footer .textwidget {
 	padding:8px 0 0 0;
 	text-align:center;
 	line-height:16px
 }
-footer p,
+footer .textwidget,
 footer a {
 	color:#fff;
 	font-size:13px
 }
 footer a:hover {
 	color:#fff
+}
+footer .textwidget span {
+	font-size:10px;
+	line-height:12px;
+	margin-bottom:6px;
+	display:inline-block
 }
 legend.titulo {
 	background-image:url('images/fondo-leyenda.png');
