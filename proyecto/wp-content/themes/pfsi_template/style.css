@@ -84,6 +84,7 @@ a {
 	margin-top:3px;
 	display:block
 }
+.menu-principal > li.current-menu-parent a,
 .menu-principal > li.current-menu-item a,
 .menu-principal > li a:hover {
 	background-image:url('images/fondo-menu.png')
@@ -109,7 +110,8 @@ a {
 	float:left;
 	width:100%
 }
-#menu-principal-1 .sub-menu li:hover {
+#menu-principal-1 .sub-menu li:hover,
+#menu-principal-1 .sub-menu li.current-menu-item {
 	background:#fff
 }
 #menu-principal-1 .sub-menu a {
@@ -119,8 +121,12 @@ a {
 	padding:0!important;
 	margin-top:0!important
 }
-#menu-principal-1 .sub-menu li:hover a {
-	color:#4f8e3a!important
+#menu-principal-1 .sub-menu li:hover a,
+#menu-principal-1 .sub-menu li.current-menu-item a {
+	color:#4f8e3a!important	
+}
+#menu-principal-1 .sub-menu li a {
+	background-image:none
 }
 .vertical-menu ul {
 	margin:0;
@@ -140,13 +146,13 @@ a {
 	font-size:14px;
 	color:#211915
 }
-.vertical-menu .menu-item-has-children {
+.vertical-menu li.menu-item-has-children.active,
+.vertical-menu li.current-menu-ancestor {
 	background-color:transparent!important;
 	background-image:url('images/fondo-menu-vertical.png')!important;
 	background-position:top left;
 	background-repeat:no-repeat;
-	margin-top:5px;
-	padding-bottom:15px
+	margin-top:5px
 }
 .vertical-menu li.current-menu-item {
 	background-color:#4f8e3a;
@@ -154,11 +160,19 @@ a {
 	margin-top:5px;
 	padding-bottom:4px
 }
+.vertical-menu li.menu-item-has-children .sub-menu {
+	display:none
+}
+.vertical-menu li.menu-item-has-children.active .sub-menu,
+.vertical-menu li.current-menu-ancestor .sub-menu {
+	display:block!important;
+	margin-top:5px
+}
 .vertical-menu li.current-menu-item a,
-.vertical-menu li.menu-item-has-children a {
+.vertical-menu li.current-menu-ancestor a {
 	color:#fff
 }
-.vertical-menu li.menu-item-has-children > a {
+.vertical-menu li.current-menu-ancestor > a {
 	display:block;
 	margin-bottom:10px
 }
