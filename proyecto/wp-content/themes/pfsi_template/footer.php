@@ -14,7 +14,7 @@
 		<?php wp_footer(); // js scripts are inserted using this function ?>
 		<script>
 			jQuery(document).ready(function($) {
-				jQuery('.sub-menu:first').fadeOut();
+				jQuery('.sub-menu').fadeOut();
 				jQuery('.menu-item-has-children', '#menu-principal-1').hover(
 					function() {
 						jQuery('.sub-menu', this).stop().fadeIn();
