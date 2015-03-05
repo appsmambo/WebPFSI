@@ -101,7 +101,7 @@ p {
 	padding:14px 0 0;
 	width:185px;
 	position:absolute;
-	overflow:hidden;
+	/*overflow:hidden;*/
 	z-index:10;
 	left:-50px;
 	top:44px
@@ -111,7 +111,8 @@ p {
 	padding:10px 15px 10px 20px;
 	list-style:none;
 	float:left;
-	width:100%
+	width:100%;
+	position:relative
 }
 #menu-principal-1 .sub-menu li:hover,
 #menu-principal-1 .sub-menu li.current-menu-item {
@@ -124,12 +125,36 @@ p {
 	padding:0!important;
 	margin-top:0!important
 }
-#menu-principal-1 .sub-menu li:hover a,
-#menu-principal-1 .sub-menu li.current-menu-item a {
-	color:#4f8e3a!important	
+#menu-principal-1 .sub-menu > li:hover a,
+#menu-principal-1 .sub-menu > li.current-menu-item a {
+	color:#4f8e3a!important
 }
 #menu-principal-1 .sub-menu li a {
 	background-image:none
+}
+#menu-principal-1 .sub-menu .menu-item-has-children {
+	background-image:url('images/icono-submenu.png');
+	background-position:95% center;
+	background-repeat:no-repeat
+}
+#menu-principal-1 .sub-menu .menu-item-has-children:hover {
+	background-image:url('images/icono-submenu-hover.png')!important;
+	background-position:95% center!important;
+	background-repeat:no-repeat!important
+}
+#menu-principal-1 .sub-menu .sub-menu {
+	right:-185px;
+	top:0!important;
+	left:initial!important;
+	padding:0!important;
+	background-image:none!important
+}
+#menu-principal-1 .sub-menu .sub-menu li a {
+	color:#fff!important
+}
+#menu-principal-1 .sub-menu .sub-menu li:hover a,
+#menu-principal-1 .sub-menu .sub-menu li.current_page_item a {
+	color:#4f8e3a!important
 }
 .vertical-menu ul {
 	margin:0;
@@ -150,7 +175,9 @@ p {
 	color:#211915
 }
 .vertical-menu li.menu-item-has-children.active,
-.vertical-menu li.current-menu-ancestor {
+.vertical-menu li.current-menu-ancestor,
+.vertical-menu .sub-menu li.menu-item-has-children.current-menu-item,
+.vertical-menu .sub-menu li.current-menu-ancestor {
 	background-color:transparent!important;
 	background-image:url('images/fondo-menu-vertical.png')!important;
 	background-position:top left;
@@ -166,14 +193,18 @@ p {
 .vertical-menu li.menu-item-has-children .sub-menu {
 	display:none
 }
-.vertical-menu li.menu-item-has-children.active .sub-menu,
-.vertical-menu li.current-menu-ancestor .sub-menu {
+.vertical-menu li.menu-item-has-children.active > .sub-menu,
+.vertical-menu li.current-menu-ancestor > .sub-menu,
+.vertical-menu li.current-menu-item.menu-item-has-children > .sub-menu {
 	display:block!important;
 	margin-top:5px
 }
 .vertical-menu li.current-menu-item a,
 .vertical-menu li.current-menu-ancestor a {
-	color:#fff
+	color:#fff;
+	display:inline-block;
+	font-size:13px;
+	margin-bottom:6px
 }
 .vertical-menu li.current-menu-ancestor > a {
 	display:block;
@@ -189,15 +220,29 @@ p {
 .vertical-menu .sub-menu li:last-child {
 	border-bottom:none
 }
-.vertical-menu .sub-menu li a {
+.vertical-menu .sub-menu li a,
+.vertical-menu .sub-menu .sub-menu li.menu-item-has-children.active a {
 	font-size:11px;
-	color:#3a5b3a
+	color:#3a5b3a!important
 }
 .vertical-menu .sub-menu li.current-menu-item {
 	background-color:#4f8e3a
 }
-.vertical-menu .sub-menu li.current-menu-item a {
-	color:#fff
+.vertical-menu .sub-menu li.current-menu-item > a {
+	color:#fff!important
+}
+.vertical-menu .sub-menu .sub-menu {
+	margin-left:5px
+}
+.vertical-menu .sub-menu li.menu-item-has-children.active > a,
+.vertical-menu .sub-menu li.current-menu-ancestor > a {
+	color:#fff!important;
+	margin-top:0!important
+}
+.vertical-menu .sub-menu li.menu-item-has-children > a {
+	padding-left:4px;
+	display:inline-block;
+	line-height:12px
 }
 
 .meteor-slides .meteor-buttons {

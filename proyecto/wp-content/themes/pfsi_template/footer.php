@@ -17,9 +17,9 @@
 				jQuery('.sub-menu').fadeOut();
 				jQuery('.menu-item-has-children', '#menu-principal-1').hover(
 					function() {
-						jQuery('.sub-menu', this).stop().fadeIn();
+						jQuery('.sub-menu:first', this).stop().fadeIn();
 					}, function() {
-						jQuery('.sub-menu', this).stop().fadeOut();
+						jQuery('.sub-menu:first', this).stop().fadeOut();
 					}
 				);
 			});
