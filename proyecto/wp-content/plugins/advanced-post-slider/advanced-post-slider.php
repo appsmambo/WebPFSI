@@ -480,7 +480,7 @@
 	</script>
 <div id="advps_container<?php echo $sldshowID;?>" class="advps-slide-container <?php if ($sldshowID == 4) echo 'evento';?>" style="max-width:<?php echo $container['advps_sld_width'];?>px;">
 	<div class="titular-noticias">
-		<?php if ($sldshowID == 3) echo 'NOTICIAS'; else echo 'EVENTOS';?>
+		<?php if ($sldshowID == 3) echo 'NOTICIAS'; else echo 'EVENTOS Y NOTICIAS';?>
 	</div>
   <div id="<?php echo "advpsslideshow_".$sldshowID;?>">
     <?php $count = 1;$the_query = new WP_Query($query_arg); while ($the_query->have_posts()) : $the_query->the_post();if($template == 'one'):

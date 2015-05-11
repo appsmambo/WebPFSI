@@ -11,13 +11,20 @@ Template Name: Homepage
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						<section class="row post_content">
 							<div class="col-sm-8">
-								<?php the_content(); ?>
+								<?php //the_content(); ?>
+								<?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow(); } ?>
 							</div>
 							<?php get_sidebar('sidebar2'); // sidebar 2 ?>
 						</section> <!-- end article header -->
 						<section class="row">
 							<div class="col-sm-8">
-								<?php echo do_shortcode( '[advps-slideshow optset="3"]' ); ?>
+								<?php //echo do_shortcode( '[advps-slideshow optset="3"]' ); ?>
+								<h1 class="home">
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php the_title(); ?>
+									</a>
+								</h1>
+								<?php the_content(); ?>
 							</div>
 							<div class="col-sm-4">
 								<?php echo do_shortcode( '[advps-slideshow optset="4"]' ); ?>
